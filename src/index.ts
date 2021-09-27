@@ -1,4 +1,7 @@
+import {config as dotenvConfig} from 'dotenv';
 import {ApplicationConfig, TodoApplication} from './application';
+
+dotenvConfig();
 
 export * from './application';
 
