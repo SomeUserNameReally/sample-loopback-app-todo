@@ -1,4 +1,5 @@
 import {Entity, hasMany, model, property} from '@loopback/repository';
+import {TodoWithRelations} from '.';
 import {Todo} from './todo.model';
 
 @model()
@@ -31,6 +32,7 @@ export class User extends Entity {
 
 export interface UserRelations {
   // describe navigational properties here
+  todos?: TodoWithRelations[];
 }
 
 export type UserWithRelations = User & UserRelations;

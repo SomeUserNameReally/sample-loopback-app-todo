@@ -1,4 +1,5 @@
 import {belongsTo, Entity, model, property} from '@loopback/repository';
+import {UserWithRelations} from '.';
 import {User} from './user.model';
 
 @model()
@@ -49,6 +50,7 @@ export class Todo extends Entity {
 
 export interface TodoRelations {
   // describe navigational properties here
+  user?: UserWithRelations;
 }
 
 export type TodoWithRelations = Todo & TodoRelations;
