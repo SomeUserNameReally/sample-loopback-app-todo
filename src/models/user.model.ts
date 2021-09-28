@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, hasMany, model, property} from '@loopback/repository';
+import {Todo} from './todo.model';
 
 @model()
 export class User extends Entity {
@@ -19,6 +20,9 @@ export class User extends Entity {
     type: 'string',
   })
   password?: string;
+
+  @hasMany(() => Todo)
+  todos: Todo[];
 
   constructor(data?: Partial<User>) {
     super(data);

@@ -38,6 +38,11 @@ export class Todo extends Entity {
   })
   updatedAt: Date;
 
+  @property({
+    type: 'string',
+  })
+  userId?: string;
+
   constructor(data?: Partial<Todo>) {
     super(data);
   }
