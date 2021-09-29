@@ -2,7 +2,20 @@ import {Entity, hasMany, model, property} from '@loopback/repository';
 import {TodoWithRelations} from '.';
 import {Todo} from './todo.model';
 
-@model()
+@model({
+  settings: {
+    indexes: {
+      uniqueEmail: {
+        keys: {
+          email: 1,
+        },
+        options: {
+          unique: true,
+        },
+      },
+    },
+  },
+})
 export class User extends Entity {
   @property({
     type: 'string',
